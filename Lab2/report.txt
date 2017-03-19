@@ -1,0 +1,17 @@
+2-1
+I made a swap funtion for change the value in A and B
+pA's address is in ppA, and A's address is in pA
+so **ppA means the value of A
+
+2-2
+I declared char array [31] since the last is NULL
+and made while loof for check length of string
+
+2-3
+atoi could change character to integer
+and check the n, if n is less than 3 quit the program.
+by using the 2d dynamic allocation, the program could allocate size the number of name and the length of name
+
+2-4
+by using pointer of funtion, insert one of the four fundamental operations to calc the function pointer.
+
