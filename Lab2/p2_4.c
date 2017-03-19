@@ -28,7 +28,7 @@ int main(){
 
 	while (1){
 		puts("========================");
-		puts("0. add\n1. sub\n2. mul\n3. div\n4. exi");
+		puts("0. add\n1. sub\n2. mul\n3. div\n4. exit");
 		puts("========================");
 		printf("Select operation : ");
 		scanf("%d", &c);
