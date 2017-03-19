@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 		printf("enter %d names:\n", n);
 
 		int i = 0;
-		for (int i = 0; i < n; i++)
+		for ( i = 0; i < n; i++)
 		{
 			scanf("%s", input);
 
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
 		printf("the names you entered:\n");
 		int a = 0;
-		for (int a = 0; a < n; a++)
+		for ( a = 0; a < n; a++)
 		{
 			printf("%s\n", names[a]);
 			free(names[a]);
