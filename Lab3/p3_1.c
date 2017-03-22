@@ -57,16 +57,8 @@ int main(int argc, char* argv[]){
 	
 	FILE *file = fopen(argv[1], "rt");
 	
-	
-	while (input != EOF){
-		input=fgetc(file);
-		if (input == '\n') line++;
-	}
-	fseek(file, 0, SEEK_SET);
-	
-	while (line--){
+	while (fscanf(file, "%c", &input) != EOF){
                 
-		fscanf(file, "%c", &input);
 		
 		switch (input){
 		case 'i':
