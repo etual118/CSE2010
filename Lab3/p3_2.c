@@ -21,7 +21,7 @@ List MakeEmpty(List H){
 int IsEmpty(List L) {
 	return L->Next == NULL;
 }
-int lsLast(Position P, List L) {
+int IsLast(Position P, List L) {
 	return P->Next == NULL;
 }
 void Insert(ElementType X, List L, Position P){
@@ -104,7 +104,7 @@ int main(int argc, char* argv[]){
 				Insert(a, L, L);
 			else{
 				if (Find(a, L) != NULL) printf("Insertion(%d) Failed : element %d is already in the list\n", a, a);
-				if else	 (Find(b, L) == NULL) printf("Insertion(%d) Failed : element %d is not in the list\n", a, b);
+				else if(Find(b, L) == NULL) printf("Insertion(%d) Failed : element %d is not in the list\n", a, b);
 				
 				else Insert(a, L, Find(b, L));
 			}	
