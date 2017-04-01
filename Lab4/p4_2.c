@@ -94,7 +94,7 @@ int main(int argc, char *argv[]){
 		}
 		else if (ch == 'd'){
 			if (IsEmpty(Q)){
-				printf("Queue is empty!\n");
+				printf("Dequeue Failed : Queue is empty!\n");
 			}
 			else{
 				Dequeue(Q);
@@ -103,7 +103,7 @@ int main(int argc, char *argv[]){
 
 		else if (ch == 'f'){
 			if (IsEmpty(Q)){
-				printf("Queue is empty!\n");
+				printf("Print Failed : Queue is empty!\n");
 			}
 			else{
 				PrintFirst(Q);
@@ -112,7 +112,7 @@ int main(int argc, char *argv[]){
 
 		else if (ch == 'r'){
 			if (IsEmpty(Q)){
-				printf("Queue is empty!\n");
+				printf("Print Failed : Queue is empty!\n");
 			}
 			else{
 				PrintRear(Q);
