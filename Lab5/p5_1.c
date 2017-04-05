@@ -107,7 +107,7 @@ int main(int argc, char** argv) {
 	fseek(file, 0, SEEK_SET);
 	for (i = 0; i < count; i++) {
 		fscanf(file, "%c", &ch);
-		;
+		
 		if (isdigit(ch) && ch != '0') {
 			tran = ch - '0';
 			Push(tran, S);
