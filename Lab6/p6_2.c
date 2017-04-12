@@ -59,6 +59,7 @@ Tree DeleteNode(int key, Tree root) {
 		TmpCell = FindMax(root->left);
 		root->value = TmpCell->value;
 		root->left = DeleteNode(root->value, root->left);
+		
 	}
 
 	else {
@@ -173,6 +174,7 @@ int main(int argc, char *argv[]) {
 			}
 			else {
 				root = DeleteNode(num, root);
+				printf("Delete %d\n",num);
 			}
 		}
 
