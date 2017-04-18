@@ -30,9 +30,9 @@ HeapStruct CreateHeap(int heapsize) {
 
 void Insert(HeapStruct H, int X) {
 	int i;
-	for (i=1;i<H->Size+1;i++){
-		if(X==H->Elements[i]){
-			printf("Insertion Error : There is already %d in the tree",X);
+	for (i = 1; i<H->Size + 1; i++) {
+		if (X == H->Elements[i]) {
+			printf("Insertion Error : There is already %d in the tree\n", X);
 			return;
 		}
 	}
@@ -41,18 +41,16 @@ void Insert(HeapStruct H, int X) {
 		return;
 	}
 
-	else if(H->Size >=0 && H->Size < H->Capacity){
-		H->Elements[1] = X;
-		H->Size++;
-		printf("insert %d,%d\n",X,H->Size);
-		return;
+	else if (H->Size >= 0 && H->Size < H->Capacity) {
+		H->Elements[++H->Size] = X;
+		printf("insert %d\n", X);
 	}
-	
-	for (i = ++H->Size; H->Elements[i / 2] < X; i /= 2) {
-		if (i / 2 == 0) {
+
+	for (i = H->Size; H->Elements[i / 2] < X; i /= 2) {
+	  	if(i/2 == 0){
 			H->Elements[i] = X;
 			return;
-		}
+		}	
 		H->Elements[i] = H->Elements[i / 2];
 	}
 	H->Elements[i] = X;
@@ -89,8 +87,21 @@ int DeleteMax(HeapStruct H) {
 }
 
 
+void PrintHeap(HeapStruct H){
+	int i;
 
-int main(int argc, char *argv[]) {
+	if (H->Size == 0){
+		printf("Print : Max Heap is empty\n");
+		return;
+	}
+
+	for (i = 1; i <= H->Size; i++){
+		printf("%d ", H->Elements[i]);
+	}
+	printf("\n");
+}
+
+int main(int argc, char *argv[]){
 	int num = 0, count = 1;
 	char ch;
 	HeapStruct H = NULL;
@@ -98,22 +109,23 @@ int main(int argc, char *argv[]) {
 	FILE *file = fopen(argv[1], "rt");
 
 
-	while (!feof(file)) {
+	while (!feof(file)){
 
 		fscanf(file, "%c", &ch);
 
-		if (ch == 'n') {
+		if (ch == 'n'){
 			fscanf(file, "%d", &num);
 
 			H = CreateHeap(num);
 		}
 
-		else if (ch == 'i') {
+		else if (ch == 'i'){
 			fscanf(file, "%d", &num);
 
 			Insert(H, num);
-		
 		}
+
+		
 	}
 
 	fclose(file);
